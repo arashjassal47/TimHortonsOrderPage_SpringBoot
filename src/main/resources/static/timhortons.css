@@ -1,0 +1,32 @@
+body { 
+    background: #ecdecd;
+}
+h1, h2 {
+    color: #400e02;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+h2 {
+    font-size:17px;
+}
+section {
+    border:2px solid #400e02;
+    margin-bottom:20px;
+    padding:10px;
+}
+#wrapper {
+    width:421px;
+    margin:auto;
+}
+form {
+    width:300px;
+    margin:auto;
+}
+header {
+    text-align:center;
+}
+input[type=number] {
+    width:50px;
+}
+section.coffee {
+    background-color:white;
+}

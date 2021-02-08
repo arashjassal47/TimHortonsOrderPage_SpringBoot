@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+    Front page for Tim Horton's exercise 
+    Ahmad Soleimani, September 2018
+    Modified by:- Arashdeep Singh, October 6
+-->
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Tim Horton's Orders</title>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' type='text/css' href='timhortons.css'>
+    </head>
+    <body>
+        <div id='wrapper'>
+            <header>
+                <img src='images/logo-en.jpg'>
+                <h1>Welcome to Tim Horton's!</h1>
+
+            </header>
+            <form method="POST" action="output">
+            	<input type="number" min="1" name="noOfCups" value="1" />
+            	<select name="size">
+            		<option value="Small">Small</option>
+            		<option value="Medium">Medium</option>
+            	    <option value="Large">Large</option>
+            	</select><br>
+            	<input type="radio" name="type" id="Regular" value="Regular"><label for="Regular">Regular</label><br>
+            	<input type="radio" name="type" id="DoubleDouble" value="DoubleDouble"><label for="DoubleDouble">Double Double</label><br>
+            	<input type="radio" name="type" id="TripleTriple" value="TripleTriple"><label for="TripleTriple">Triple Triple</label><br>
+            	<input type="radio" name="type" id="Black" value="Black"><label for="Black">Black</label><br>
+            	<input type="radio" name="type" id="BlackOneSugar" value="BlackOneSugar"><label for="BlackOneSugar">Black One Sugar</label><br>
+            	<input type="radio" name="type" id="BlackTwoSugar" value="BlackTwoSugar"><label for="BlackTwoSugar">Black Two Sugar</label><br>
+            	<input type="radio" name="type" id="BlackThreeSugar" value="BlackThreeSugar"><label for="BlackThreeSugar">Black Three Sugar</label><br>
+            	<input type="submit" value="Order Coffee"/>
+            </form>
+        </div>
+    </body>
+</html>

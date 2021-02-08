@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+    Billing page for Tim Horton's exercise 
+    Arashdeep Singh, October 6 2020
+-->
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Tim Horton's Orders</title>
+	
+	<link rel='stylesheet' type='text/css' href='timhortons.css'>
+	<script>
+	function listHider(){
+		if(document.getElementById("tableList").style.display=="none"){
+			document.getElementById("tableList").style.display="block";
+		}
+		else{document.getElementById("tableList").style.display="none";}
+	}
+
+	</script>
+	<style>
+		tr:nth-child(even){background-color:#F7ECCB;}
+		tr:nth-child(odd){background-color:#ECDECD;}
+		td,tr{padding: 8px}
+	</style>
+</head>
+<body>
+	<p id="sugar" style="display:none;" th:text="${sugar}"></p>
+	<p id="cream" style="display:none;" th:text="${cream}"></p>
+	<h1>Thanks for your Order. Here it is:</h1>
+	<div th:each="i : ${#numbers.sequence(1, noOfCups)}">
+		<section  style="background:white;border:2px solid #400e02;">
+			<img th:src="@{/images/cup.jpg}" >
+			<div class="div1" style="display:inline;">
+				<img th:src="@{/images/plus.jpg}" >
+				<img th:each="i : ${#numbers.sequence(1, sugar)}" th:src="@{/images/sugar.jpg}">
+			</div>
+			<div class="div2" style="display:inline;">
+				<img th:src="@{/images/plus.jpg}">
+				<img th:each="i : ${#numbers.sequence(1, cream)}" th:src="@{/images/cream.jpg}">
+			</div>
+		</section>
+		
+	</div>
+	<section>
+		<p>Cost:<span th:text="${cost}"></span>*<span th:text=${noOfCups}></span> + tax = $<span th:text="${totalCost}"></span>.</p>
+		<p>So far, we have made $<span th:text="${totalCost2}"></span>.</p>
+		<a href="/"><button>Order again</button></a><button id="listOrder" onclick="listHider();">List Orders</button>
+	</section>
+	<pre>
+	
+	
+	</pre>
+	<div id="tableList" style="display:none;">
+		<h1>Here is a list of your previous orders.</h1>
+		<table  style="padding:20px 100px;">
+			<tr><th>Total cups</th><th>Size</th><th>Type</th><th>Cost</th></tr>
+			<tr th:each="i: ${orderList}">
+				<th style="padding:0px 5px;" th:text="${i.noOfCups}"></th>
+				<th style="padding:0px 5px;" th:text="${i.size}"></th>
+				<th style="padding:0px 5px;" th:text="${i.type}"></th>
+				<th style="padding:0px 5px;" th:text="${i.totalCost}"></th>
+			</tr>
+		</table>
+	</div>
+	
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
