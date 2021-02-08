@@ -3,7 +3,7 @@
  * @author Arashdeep Singh
  * @date 6 Oct 2020
  */
-package ca.sheridancollege.sin10373.controllers;
+package ca.sheridancollege.controllers;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ca.sheridancollege.sin10373.beans.Order;
+import ca.sheridancollege.beans.Order;
 
 @Controller
 public class ProcessOrder {

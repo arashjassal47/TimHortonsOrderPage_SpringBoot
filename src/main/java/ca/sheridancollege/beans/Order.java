@@ -3,7 +3,7 @@
  * @author Arashdeep Singh
  * @date 6 Oct 2020
  */
-package ca.sheridancollege.sin10373.beans;
+package ca.sheridancollege.beans;
 
 import java.io.Serializable;
 
